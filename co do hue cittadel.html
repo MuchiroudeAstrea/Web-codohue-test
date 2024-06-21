@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hue Monument</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="shortcut icon" type="image/png" href="/icon page.png"/>
+		<style>
+			/* CSS goes here, at the top of the page */	
+			@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+			@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+			h1, h2, h4, h5, h6 {
+				font-family: 'PT Sans', 'Helvetica', 'Arial';
+			}
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				font-family: 'PT Serif', 'Helvetica', 'Arial';
+			}
+			#top-bar {
+				width: 100%;
+				background: #F1F1F1; /* light gray */
+				border-bottom: 1px solid #D4D4D4; /* dark gray "underline" */
+				height: 25px;
+			}
+			.normal-wrapper {
+				width: 900px;
+				margin: 0 auto;
+				padding: 15px 40px;
+				overflow: auto;
+			}
+			.logo-icon {
+				color: #36e51f ;
+				font-size: 60pt;
+				float: left;
+			}
+			h1 {
+				float: left;
+				margin: 21px 0 0 25px;
+			}
+			#navbar {
+			    list-style-type: none; /* remove bullet points */
+			    margin: 29px 0 0 0;
+			    padding: 0;
+			    float: right;
+			    font-size: 16pt;
+			}
+			#navbar li {
+			    display: inline; /* make items horizontal */
+			}
+			#navbar li a:link, #navbar li a:visited, #navbar li a:active { 
+				text-decoration: none; /* remove underline */
+				color: #000000;
+				padding: 0 16px 0 10px; /* space links apart */
+				margin: 0;
+				border-right: 2px solid #B4B4B4; /* divider */
+			}
+			#navbar li a:link.last-link {
+				/* remove divider */
+				border-right: 0px;
+			}
+			#navbar li a:hover {
+				/* change color on hover (mouseover) */
+				color: #EB6361;
+			}
+			#top-color-splash {
+				width: 100%;
+				height: 4px;
+				background: #EB6361;
+			}
+			.anh {
+				width: 50%;
+				text-align: center;
+				margin-top: 20px;
+				padding-left: 480px;
+			}
+			.one-third {
+				width: 40%;
+				float: left;
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				margin-top: 20px;
+				text-align: justify;
+			}
+			.on-third {
+				width: 100%;
+				float: left;
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				margin-top: 0px;
+				text-align: justify;
+			}
+			.two-third {
+				width: 60%;
+				float: left;
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				padding-left: 40px;
+				text-align: right;
+				margin-top: 20px;
+			}
+			.to-third {
+				width: 60%;
+				float: left;
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				padding-left: 160px;
+				text-align: right;
+				margin-top: 20px;
+				text-align: justify;
+			}
+			.tow-third {
+				width: 60%;
+				float: left;
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				padding-left: 150px;
+				text-align: right;
+				margin-top: 170px;
+				text-align: justify;
+			}
+			.featured-image {
+				max-width: 500px; /* reduce image size while maintaining aspect ratio */
+			}
+			.no-margin-top {
+				margin-top: 0; /* remove margin on things like headers */
+			}
+			#quote-area {
+				background: #363636;
+				color: #FFFFFF;
+				text-align: center;
+				padding: 15px 0;
+			}
+			h3 {
+				font-weight: normal;
+				font-size: 20pt;
+				margin-top: 0px;
+			}
+			h4 {
+				font-weight: normal;
+				font-size: 16pt;
+				margin-bottom: 0;
+			}
+			.icon-outer {
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				float: left;
+				width: 33.33%;
+				padding: 25px;
+				margin: 0;
+				text-align: center;
+			}
+			.icon-circle {
+				background: #EEEEEE;
+				color: #B4B4B4; 
+				width: 200px;
+				height: 200px;
+				border-radius: 200px; /* make rounded corners */
+				margin: 0 auto;
+				border: 2px solid #D6D6D6;
+				box-sizing: border-box; /* ensure padding and borders do not increase the size */
+				font-size: 75pt;
+				padding: 30px 0 0 0;
+				cursor: pointer;
+			}
+			.icon-circle:hover {
+				/* change color on hover (mouseover) */
+				color: #FFFFFF;
+				background: #EB6361; /* red */
+			}
+			h5 {
+				margin: 15px 0 10px 0;
+				font-size: 20pt;
+			}
+			#footer {
+				width: 100%;
+				background: #F1F1F1; /* light gray */
+				border-top: 1px solid #D4D4D4; /* dark gray "topline" */
+				height: 150px;
+			}
+			.hidden {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top-bar"></div>
+
+		<div class="normal-wrapper">
+			<div id="logo-container">
+				<i class="fa fa-volume-down logo-icon"></i><h1>Huế Monuments</h1>
+			</div>
+
+			<ul id="navbar">
+				<li><a href="https://en.wikipedia.org/wiki/The_Complex_of_Hu%E1%BA%BF_Monuments">Informations</a></li>
+				<li><a href="https://whc.unesco.org/en/list/678/">About</a></li>
+				<li><a href="https://www.youtube.com/watch?v=eJPcTPsfg5g">Reviews Video</a></li>
+				<li><a href="https://www.unesco.org/en" class="last-link">Contact</a></li>
+			</ul>
+
+		</div>
+
+		<div id="top-color-splash"></div>
+		<img class ="anh" src="https://i.ytimg.com/vi/eJPcTPsfg5g/maxresdefault.jpg" />
+		<div class="normal-wrapper">
+			<div class="one-third">
+				<h2 class="no-margin-top">Welcome to Hue Munument!</h2>
+				<p>The Complex of Huế Monuments (Vietnamese: Quần thể di tích cố đô Huế) is a UNESCO World Heritage Site-listed relic complex located in the city of Huế, central Vietnam. Established as the capital of newly unified Vietnam in 1802 under the reign of emperor Gia Long, Hue played a vital role as the political, cultural, and religious center of the empire.[1].</p>
+			</div>
+			<div class="two-third">
+				<img id="f-image-1" class="featured-image" src=https://www.vietvisiontravel.com/wp-content/uploads/2019/04/The-Complex-of-Hue-Monuments.jpg />
+				<img id="f-image-2" class="featured-image hidden" src=https://evivatour.com/wp-content/uploads/2021/11/Complex-of-Hue-Monuments-1000x565.jpg />
+				<img id="f-image-3" class="featured-image hidden" src=https://vietnamvacation.com.vn/wp-content/uploads/2023/06/Hue-Imperial-City-Walking-Tour-Vietnam-Vacation-Travel-1.jpg />
+			</div>
+			<div class="one-third">
+			<img class="featured-image" src=https://danangbest.com/uploads/news/dai-noi-hue-1.webp />
+			<p>The complex consists of Hoàng thành (the Imperial City), Kinh thành (the Citadel), and the Tử Cấm Thành (Purple Forbidden City), as well as associated monuments outside of the city, including the tombs of the emperors Gia Long, Minh Mạng, Thiệu Trị, Tự Đức, Dục Đức, Đồng Khánh, and Khải Định, and a string of temples, pagodas, and other spiritual sites.[2]</p>
+			</div> 
+			<div class="to-third">
+			<p>The structures of The Complex of Huế Monuments are carefully placed within the natural setting of the site and aligned with the concept of oriential geomancy and Five elements[3] which including Five Cardinal Points (center, west, east, north, south), the Five Elements (earth, metal, wood, water, fire), and the Five Colors (yellow, white, blue, black, red).[4]</p>
+			</div>
+			<div class="tow-third">
+			<img class="featured-image" src=https://gachdongtam.com.vn/wp-content/uploads/2022/11/co-do-hue-1.jpg />
+			</div>
+			<div class="on-third">
+				<div id="top-color-splash"></div>
+				<h2 class="no-margin-top">The Specials about Hue Complex!</h2>
+			</div>
+			<div class="one-third">
+				
+			</div>
+			<div class="two-third">
+				<img class="featured-image" src=https://bcp.cdnchinhphu.vn/Uploaded/nguyenvanhuan/2017_01_07/Hue03.jpg />
+				<img class="featured-image" src=https://tourdulichgiare.com.vn/wp-content/uploads/2021/04/co-do-hue-dia-diem-check-in-dep.jpg />
+				<img class="featured-image" src=https://media-cdn.tripadvisor.com/media/photo-s/1c/64/69/01/c-do-hu-t-ng-la-th-do.jpg />
+			</div>
+			<div class="on-third">
+				<div id="top-color-splash"></div>
+				<h2 class="no-margin-top">Tourist's Activities!</h2>
+			</div>
+			<div class="one-third">
+				
+			</div>
+			<div class="two-third">
+				<img class="featured-image" src=https://tourdanangcity.vn/wp-content/uploads/2021/04/co-do-hue-4.jpg />
+				<img class="featured-image" src=https://image.kkday.com/v2/image/get/w_960%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/product_136184/20221122113757_oW128/jpg />
+				<img class="featured-image" src=https://imagev3.vietnamplus.vn/w1000/Uploaded/2024/ngtnnn/2022_08_31/TTXVN_3108Hue1.jpg.webp />
+			</div>
+			<div class="on-third">
+				<div id="top-color-splash"></div>
+				<h2 class="no-margin-top">What Tourist should do to preserve this heritage?</h2>
+			</div>
+			<div class="one-third">
+			
+			</div>
+			<div class="two-third">
+				<img class="featured-image" src="D:\Bài tập Anh 10 Trần Tùng Dương\cach-su-dung-tui-dung-rac-3.jpg" />
+				<img class="featured-image" src=https://lienchieu.danang.gov.vn/documents/10180/1792001/z4230780425822_7fb4d43deeaf66a89e5b8b95b3c76099.jpg/5028a183-c33d-4657-adc8-fb390287ce43?t=1680403887314 />
+				<img src=https://ims.baoyenbai.com.vn/NewsImg/9_2022/251309_dia-chi-do.jpg>
+			</div>
+			<iframe width="911" height="729" src="https://www.youtube.com/embed/nm772MwvvnM" title="Complex of Hué Monuments (UNESCO/NHK)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iFrame src="https://viz4d.com/view/lang-tu-duc-co-do-hue-Koo8K" width="911" height="720" allowfullscreen></iFrame>
+			<iframe width="1280" height="720" src="https://www.youtube.com/embed/edxFqT1M91E" title="RAINY 75 | PLATE Aluminum - Carbon fiber - No foam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<div>
+	
+	</div>
+		</div>
+		
+		<div id="quote-area">
+			
+			</div>
+		</div>
+		
+		<div class="normal-wrapper">
+			<div class="icon-outer">
+				<div class="icon-circle">
+					<i class="fa fa-youtube"></i>
+				</div>
+				<h5>YouTube</h5>
+			</div>
+
+			<div class="icon-outer">
+				<div class="icon-circle">
+					<i class="fa fa-camera-retro"></i>
+				</div>
+				<h5>Reviews</h5>
+			</div>
+
+			<div class="icon-outer">
+				<div class="icon-circle">
+					<i class="fa fa-dollar"></i>
+				</div>
+				<h5>Buying Local Handmades</h5>
+			</div>
+		</div>
+		<p>Made by Trần Tùng Dương 11A1</p>
+		<div id="footer"></div>
+
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			/* JavaScript goes here, at the bottom of the page */
+			$(document).ready(function() {
+			    // run once the page is ready
+			    var time = 2500;
+			    // get the image containers
+			    $im1 = $('#f-image-1');
+			    $im2 = $('#f-image-2');
+			    $im3 = $('#f-image-3');
+
+			    setInterval(function(){
+			    	// call function every x milliseconds (defined in time variable above)
+			    	changeImage();
+			    }, time);
+
+			    var currentImage = 1;
+
+			    function changeImage(){
+			    	switch(currentImage) {
+					    case 1:
+					        // show image 2
+					    	$im1.hide();
+					    	$im2.show();
+					    	$im3.hide();
+					        currentImage = 2;
+					        break;
+					    case 2:
+					    	// show image 3
+					    	$im1.hide();
+					    	$im2.hide();
+					    	$im3.show();
+					        currentImage = 3;
+					        break;
+					    default:
+					   	    // show image 1
+					    	$im1.show();
+					    	$im2.hide();
+					    	$im3.hide();
+					        currentImage = 1;
+					}
+			    }
+			});
+		</script>
+	</body>
+</html>
